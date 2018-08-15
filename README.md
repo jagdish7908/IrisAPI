@@ -1,7 +1,7 @@
 # Iris API :hibiscus:
 > *Expose any machine learning model as an API.*</br>
 
-API is hosted at https://farefarren.herokuapp.com/</br>
+API is hosted at https://fairfarren.herokuapp.com/</br>
 ### Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
