@@ -7,7 +7,7 @@ API is hosted at https://fairfarren.herokuapp.com/</br>
 * [Usage](#usage)
 
 ### Installation
-Clone the repository:
+Clone the repository
 ```console
 $ git clone https://github.com/jagdish7908/IrisAPI.git && cd IrisAPI
 ```
