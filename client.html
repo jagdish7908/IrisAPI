@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iris</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <link rel="shortcut icon" 
+      href="assets/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/myStyle.css">
+
+</head>
+<body>
+		<div class="row container">
+			<!-- image -->
+			<div class="col-sm-4">
+				<img src="assets/img/flower1.gif" style="width: 100%">
+			</div>
+			<div class="col-sm-8" style="margin-top: 150px;">
+				<div class="row">
+					<!-- length selector -->
+					<div class="slidecontainer col-sm-6">
+						<p class="slider_label">Sepal length</p>
+  						<input type="range" min="1" max="10" value="3" class="slider" id="myLength" step=0.1>
+  						<span id="length" class="slider_data"></span><span class="slider_label">cm</span>
+					</div>
+					<!-- width selector -->
+					<div class="slidecontainer col-sm-6">
+						<p class="slider_label">Sepal width</p>
+  						<input type="range" min="1" max="10" value="3" class="slider" id="myWidth" step=0.1>
+  						<span id="width" class="slider_data"></span><span class="slider_label">cm</span>
+					</div>
+				</div>
+                <div class="row" style="padding:10px">
+                    <button type="button" class="btn btn-danger col-sm-3">Predict - > </button>
+                    <!-- output -->
+                    <div class="output col-sm-9">
+                        <span id="answer"><img src="assets/img/loading.gif" style="width: 20%; margin-top:-30px;"></span>
+                    </div>    
+                </div>
+				
+			</div>
+		</div>
+<!-- 		<div class="footer">
+            <p style="padding-top: 8px">Made with <i class="em em-heart" style="font-size: 10px"></i> by Jagdish</p>
+        </div> -->
+<script type="text/javascript">
+
+    var slider1 = document.getElementById("myLength");
+    var output1 = document.getElementById("length");
+    output1.innerHTML = slider1.value;
+
+    var slider2 = document.getElementById("myWidth");
+    var output2 = document.getElementById("width");
+    output2.innerHTML = slider2.value;
+
+    slider1.oninput = function() {
+      output1.innerHTML = this.value;
+    }
+
+    slider2.oninput = function() {
+      output2.innerHTML = this.value;
+    }
+
+     $("button").click(function(){
+        document.querySelector('#answer').innerHTML = '<img src="assets/img/loading.gif" style="width: 20%; margin-top:-30px;>';
+        console.log(document.querySelector("#myLength").value
+                    + " "
+                    + document.querySelector("#myWidth").value)
+        
+        $.post("https://fairfarren.herokuapp.com/",
+        {
+            length: document.querySelector("#myLength").value,
+            width: document.querySelector("#myWidth").value
+        },
+        function(data, status){
+            console.log("status: " + status)
+            console.log(data['prediction'])
+            var x;
+            if(data['prediction'] == 0)
+                x = 'Setosa'
+            else if (data['prediction'] == 1)
+                x = 'Versicolor'
+            else if (data['prediction'] == 2)
+                x = 'Virginica' 
+            else
+                x = 'Error :/'
+            document.querySelector('#answer').innerHTML = x;
+        });
+    });
+</script>      	
+</body>
+</html>
+<!-- https://fairfarren.herokuapp.com/ -->
+<!-- http://127.0.0.1:5000/ -->
