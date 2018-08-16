@@ -15,7 +15,7 @@ $ git clone https://github.com/jagdish7908/IrisAPI.git && cd IrisAPI
 ```
 Install dependencies
 ```console
-$ pip install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 ### Usage
 ```console
