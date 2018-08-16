@@ -38,7 +38,8 @@
                     <button type="button" class="btn btn-danger col-sm-3">Predict - > </button>
                     <!-- output -->
                     <div class="output col-sm-9">
-                        <span id="answer"><img src="assets/img/loading.gif" style="width: 20%; margin-top:-30px;"></span>
+                        <!-- <span id="answer"><img src="assets/img/loading.gif" style="width: 20%; margin-top:-30px;"></span> -->
+                        <span id="answer">. . .</span>
                     </div>    
                 </div>
 				
@@ -66,7 +67,7 @@
     }
 
      $("button").click(function(){
-        document.querySelector('#answer').innerHTML = '<img src="assets/img/loading.gif" style="width: 20%; margin-top:-30px;>';
+        document.querySelector('#answer').innerHTML = '<span id="answer">. . .</span>';
         console.log(document.querySelector("#myLength").value
                     + " "
                     + document.querySelector("#myWidth").value)

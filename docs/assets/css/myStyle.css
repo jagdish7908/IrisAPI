@@ -9,9 +9,9 @@
 .slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 15px;
+    height: 3px;
     border-radius: 5px;
-    /*background: #d3d3d3;*/
+    background: gray;
     outline: none;
     -webkit-transition: .2s;
     transition: opacity .2s;
