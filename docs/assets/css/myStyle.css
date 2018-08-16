@@ -3,7 +3,7 @@
     width: 300px;
     padding: 50px;
     padding-bottom: 10px;
-    padding-left: 0px;
+    padding-left: 50px;
 }
 
 .slider {
@@ -63,6 +63,12 @@
    background-color: #F7F7F7;
    text-align: center;
 }
+
+/*.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #F7F7F7;
+}*/
 
 .btn{
     outline: none;
