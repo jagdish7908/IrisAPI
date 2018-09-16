@@ -1,1 +1,2 @@
-templates/index.html linguist-language=Python
+templates/index.html linguist-language=JavaScript
+*.py linguist-language=Python
